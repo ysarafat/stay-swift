@@ -1,6 +1,12 @@
+import { auth } from "@/auth";
 import PaymentForm from "@/components/payment/PaymentForm";
+import { redirect } from "next/navigation";
 
-export default function PaymentPage({ params: { hotelID } }) {
+export default async function PaymentPage({ params: { hotelID } }) {
+  const session = await auth();
+  if (!session) {
+    redirect("/login");
+  }
   return (
     <section className="container">
       <div className="p-6 rounded-lg max-w-xl mx-auto my-12 mt-[100px]">
