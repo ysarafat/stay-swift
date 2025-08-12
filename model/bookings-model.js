@@ -1,4 +1,5 @@
 const { Schema, models, model } = require("mongoose");
+import { ObjectId } from "mongodb";
 
 const bookingsSchema = new Schema({
   hotelId: {
