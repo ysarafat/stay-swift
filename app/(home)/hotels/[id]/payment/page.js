@@ -29,7 +29,12 @@ export default async function PaymentPage({
           You have picked <b>{hotelInfo?.name}</b> and base price is{" "}
           <b>${cost}</b>
         </p>
-        <PaymentForm checkin={checkin} checkout={checkout} />
+        <PaymentForm
+          checkin={checkin}
+          checkout={checkout}
+          hotelInfo={hotelInfo}
+          loggedInUser={loggedInUser}
+        />
       </div>
     </section>
   );
