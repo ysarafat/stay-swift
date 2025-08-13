@@ -25,3 +25,11 @@ export const isDateInBetween = (date, from, to) => {
     new Date(date).getTime() <= new Date(to).getTime()
   );
 };
+
+export const getDayDeference = (from, to) => {
+  return (
+    (new DataTransfer(to).getTime() - new Date(from).getTime()) /
+      (24 * 60 * 60 * 1000) +
+    1
+  );
+};
